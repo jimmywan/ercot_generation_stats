@@ -1,2 +1,3 @@
 .ipynb_checkpoints
-ERCOT
+ERCOT/*.zip
+ERCOT/*.xls*
