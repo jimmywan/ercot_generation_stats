@@ -4,7 +4,7 @@ from fuel_mappings import *
 
 def get_ercot_data():
     all_dfs = []
-    for year in (2020, 2021, 2022):
+    for year in range(2019, 2022 + 1):
         for month in list(range(1, 13)):
             newdf = _get_df(year, month)
             all_dfs.append(newdf)
@@ -13,6 +13,7 @@ def get_ercot_data():
     newdf = pd.concat(all_dfs)
     # Ignore incomplete weeks.
     newdf = newdf.query('Date < "2022-05-29"').copy()
+
     # Standardize on GWh
     newdf.loc[:, 'Total'] = newdf['Total'].divide(1000).round()
     newdf.loc[:, 'pct'] = newdf['pct'].round(3)
