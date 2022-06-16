@@ -12,7 +12,7 @@ def get_ercot_data():
                 break
     newdf = pd.concat(all_dfs)
     # Ignore incomplete weeks.
-    newdf = newdf.query('Date < "2022-05-29"')
+    newdf = newdf.query('Date < "2022-05-29"').copy()
     # Standardize on GWh
     newdf.loc[:, 'Total'] = newdf['Total'].divide(1000).round()
     newdf.loc[:, 'pct'] = newdf['pct'].round(3)
