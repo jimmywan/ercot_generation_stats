@@ -3,4 +3,4 @@ Rudimentary Analysis of ERCOT Power Generation by fuel/type.
 
 All of the charts below are base upon publicly available data downloaded from ERCOT: https://www.ercot.com/gridinfo/generation/
 
-Opinionated fuel categorizations can be found in the notebook source code.
+ERCOT does not separate sources into base vs peaker plants, so I just picked something. Opinionated fuel mappings can be found in notebook source.
